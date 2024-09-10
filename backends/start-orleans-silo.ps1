@@ -1,0 +1,1 @@
+dotnet run -c Release --project $PSScriptRoot/Orleans/SiloService/SiloService.csproj

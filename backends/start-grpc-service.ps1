@@ -1,0 +1,1 @@
+dotnet run -c Release --project $PSScriptRoot/GrpcBackendService/GrpcBackendService.csproj --launch-profile https

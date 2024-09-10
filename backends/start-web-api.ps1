@@ -1,0 +1,1 @@
+dotnet run -c Release --project $PSScriptRoot/EchoWebApi/EchoWebApi.csproj --launch-profile https

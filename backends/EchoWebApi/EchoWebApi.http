@@ -1,0 +1,7 @@
+@EchoWebApi_HostAddress = https://localhost:7200
+# @no-reject-unauthorized
+
+POST {{EchoWebApi_HostAddress}}/api/echo
+Content-Type: application/json
+
+{"message": "Hello Web API!"}
