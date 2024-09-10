@@ -25,7 +25,7 @@ public abstract class BaseBenchmark
 
         public override string ToString()
         {
-            return $"{Message.Length:D8} char(s)";
+            return $"{String.Format("{0,8}", Message.Length)} char(s)";
         }
     }
 

@@ -13,8 +13,8 @@ class Program
     {
         var bdnConfig =
             DefaultConfig.Instance.AddJob(
-                Job.LongRun.WithStrategy(RunStrategy.Monitoring)
-                    //.WithPowerPlan(PowerPlan.UserPowerPlan)
+                Job.MediumRun.WithStrategy(RunStrategy.Monitoring)
+                    .WithPowerPlan(PowerPlan.UserPowerPlan)
                     .AsDefault());
         
         bdnConfig.WithOption(ConfigOptions.JoinSummary, true); // Join the summary of all benchmarks
