@@ -47,7 +47,6 @@ public class OrleansBenchmark : BaseBenchmark
     [GlobalCleanup]
     public async Task CleanupClusterClient()
     {
-        _clusterClient = null!;
         await _host.StopAsync();
     }
 }
