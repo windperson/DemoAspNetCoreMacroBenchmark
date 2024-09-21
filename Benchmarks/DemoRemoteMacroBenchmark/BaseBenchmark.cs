@@ -11,25 +11,34 @@ public abstract class BaseBenchmark
         10,
         20,
         50,
+        70,
         100,
         200,
         500,
+        700,
         1_000,
         2_000,
         5_000,
+        7_000,
         10_000,
         20_000,
         50_000,
+        70_000,
         100_000,
         200_000,
         500_000,
+        700_000,
         1_000_000,
         2_000_000,
         5_000_000,
+        7_000_000,
         10_000_000,
         20_000_000,
         25_000_000, //To avoid Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Request body too large. The max request body size is 30000000 bytes.
-        50_000_000
+        30_000_000,
+        50_000_000,
+        70_000_000,
+        100_000_000,
     ];
 
     public class RequestMsg
@@ -39,7 +48,7 @@ public abstract class BaseBenchmark
 
         public override string ToString()
         {
-            return $"{String.Format("{0,10:N0}", Message.Length)} char(s)";
+            return $"{String.Format("{0,11:N0}", Message.Length)} char(s)";
         }
     }
 
