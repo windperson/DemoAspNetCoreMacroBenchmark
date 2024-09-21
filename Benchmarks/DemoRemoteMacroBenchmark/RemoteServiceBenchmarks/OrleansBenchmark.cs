@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Net;
+using BenchmarkDotNet.Attributes;
 using GrainInterfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,7 +18,10 @@ public class OrleansBenchmark : BaseBenchmark
     public async Task PrepareClusterClient()
     {
         var hostBuilder = Host.CreateDefaultBuilder()
-            .UseOrleansClient(client => { client.UseLocalhostClustering(); })
+            .UseOrleansClient(client =>
+            {
+                client.UseStaticClustering(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 30000));
+            })
             .ConfigureLogging(logging => logging.ClearProviders())
             .UseConsoleLifetime();
         _host = hostBuilder.Build();

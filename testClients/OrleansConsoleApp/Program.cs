@@ -1,10 +1,11 @@
-﻿using GrainInterfaces;
+﻿using System.Net;
+using GrainInterfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 var hostBuilder = Host.CreateDefaultBuilder(args)
-    .UseOrleansClient(client => { client.UseLocalhostClustering(); })
+    .UseOrleansClient(client => { client.UseStaticClustering(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 30000)); })
     .ConfigureLogging(logging => logging.AddConsole())
     .UseConsoleLifetime();
 

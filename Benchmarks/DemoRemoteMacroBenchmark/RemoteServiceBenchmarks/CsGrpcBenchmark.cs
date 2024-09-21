@@ -10,7 +10,6 @@ public class CsGrpcBenchmark : BaseBenchmark
     private ServiceProvider _serviceProvider = null!;
 
     private Echo.EchoClient _client = null!;
-    //private  _client = null!;
 
     [GlobalSetup]
     public void PrepareClient()
